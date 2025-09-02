@@ -1,5 +1,5 @@
-# Ignore everything in src
-/src/*
 
-# But track server.js
+*
+!.gitignore
+!src/
 !src/server.js
