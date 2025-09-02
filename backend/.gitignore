@@ -1,0 +1,5 @@
+# Ignore everything in src
+/src/*
+
+# But track server.js
+!src/server.js

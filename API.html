@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <button style="width: 200px; height: 50px; cursor: pointer;" onclick="api()">
+        click me
+    </button>
+    
+    <p id="p" style="margin-left: 50px; font-size: 30px;" >
+        hello click to find out followers
+    </p>
+</body>
+<script>
+    function api(){
+        const p = document.getElementById('p');
+        const url = 'https://api.github.com/users/kapil57';
+        const xhr = new XMLHttpRequest();
+    
+        xhr.open('GET', url);
+        xhr.responseType='json';
+        xhr.send();
+
+        xhr.onreadystatechange = () => {
+            if(xhr.readyState === 4){
+               p.textContent = "followers: " + xhr.response.followers;
+               
+            }
+        }
+
+        
+    }
+
+
+
+</script>
+</html>
